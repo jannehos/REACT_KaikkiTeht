@@ -412,6 +412,7 @@ export default App
 
 //******************************************************************************************************** teht1.6-1.7
 
+/*
 
 
 import { useState } from 'react'
@@ -455,6 +456,62 @@ const App = () => {
   )
 }
 
-export default App
+export default App            */
 
 //******************************************************************************************************** teht1.8
+
+
+import { useState } from 'react'
+
+const Statistics = (props) =>{
+  if (props.good, props.neutral, props.bad  === 0) {
+  return(
+      <div>
+              <h2>NO FEEDBACK</h2>
+
+      </div>
+  )
+  }
+
+  return (
+
+    <div>
+        <h2>Good: {props.good}</h2>
+        <h2>Neutral: {props.neutral}</h2>
+        <h2>Bad: {props.bad}</h2>
+      
+    </div>
+  )
+}
+
+const App = () => {
+  // tallenna napit omaan tilaansa
+  const [good, setGood] = useState(0)
+  const [neutral, setNeutral] = useState(0)
+  const [bad, setBad] = useState(0)
+
+  return (
+    <div>
+      <h1> FEEDBACK</h1><br />
+
+      <button onClick={() =>setGood(good+1)}>Good</button>
+      <button onClick={() =>setNeutral(neutral+1)}>Neutral</button>
+      <button onClick={() =>setBad(bad+1)}>Bad</button>
+      <br />
+
+
+    <h1>Statistics</h1><br />
+
+        <Statistics
+        good={good} 
+				neutral= {neutral} 
+				bad= {bad}          />
+
+  </div>
+
+  )
+}
+
+export default App
+
+//******************************************************************************************************** teht1.9
