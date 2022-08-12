@@ -289,6 +289,7 @@ const Header = (props) =>{
   
 */
 
+/*
   const Header = (props) =>{
     console.log(props)
     return (
@@ -361,3 +362,33 @@ const Header = (props) =>{
 export default App;
 
 //******************************************************************************************************** teht1.5
+
+*/
+
+import { useState } from 'react'
+
+const App = () => {
+  // tallenna napit omaan tilaansa
+  const [good, setGood] = useState(0)
+  const [neutral, setNeutral] = useState(0)
+  const [bad, setBad] = useState(0)
+
+  return (
+    <div>
+      <h1> FEEDBACK</h1><br />
+
+      <button onClick={() =>setGood(good+1)}>Good</button>
+      <button onClick={() =>setNeutral(neutral+1)}>Neutral</button>
+      <button onClick={() =>setBad(bad+1)}>Bad</button>
+      <br />
+      <h2>Good: {good}</h2>
+      <h2>Neutral: {neutral}</h2>
+      <h2>Bad: {bad}</h2>
+    </div>
+  )
+}
+
+export default App
+
+
+//******************************************************************************************************** teht1.6-1.7
